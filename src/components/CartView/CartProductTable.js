@@ -31,6 +31,7 @@ class CartProductTable extends React.Component {
         }
       }
       if(!alreadyAdd){
+        addProduct.qty = 1;
         this.props.cartList.productList.push(addProduct);
       }
       let total = 0;

@@ -41,7 +41,7 @@ class App extends React.Component {
             currentUser={this.props.currentUser} />
             <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/mysection" component={AdminView} />
+            <Route path="/adminView" component={AdminView} />
             <Route path="/cartView" component={CartView} />
             </Switch>
         </div>
