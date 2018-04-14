@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.0",
+    "cross-env": "^5.1.4",
     "history": "^4.7.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -19,9 +20,9 @@
     "superagent-promise": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=4100 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "cross-env PORT=4100 react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
 }

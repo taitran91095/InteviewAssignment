@@ -1,6 +1,6 @@
 import React from 'react';
 import MyTable from './MyTable';
-
+import MyFilter from './MyFilter';
 
 
 const MyManagerView = props => {
@@ -21,6 +21,7 @@ const MyManagerView = props => {
     return (
       <div style={divStyle} >
         <span style={spanStyle}>Product</span>
+        <MyFilter />
         <MyTable />
       </div>
     );

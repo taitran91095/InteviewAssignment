@@ -19,7 +19,9 @@ const request = {
 };
 
 const Product = {
-    list:() => request.get('/product')
+    list:() => request.get('/product'),
+    add:(product) => request.post('/product',product),
+    update:(product) => request.put('/product/'+product.id,product)
 }
 
 export default {
