@@ -1,23 +1,16 @@
 import React from 'react';
-import agent from '../agent';
 import { connect } from 'react-redux';
 import {
   HOME_PAGE_LOADED,
-  HOME_PAGE_UNLOADED,
-  APPLY_TAG_FILTER
+  HOME_PAGE_UNLOADED
 } from '../action/action';
 
-const Promise = global.Promise;
 
 const mapStateToProps = state => ({
-  ...state.home,
-  appName: state.common.appName,
-  token: state.common.token
+  ...state.home
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClickTag: (tag, pager, payload) =>
-    dispatch({ type: APPLY_TAG_FILTER, tag, pager, payload }),
   onLoad: (tab, pager, payload) =>
     dispatch({ type: HOME_PAGE_LOADED, tab, pager, payload }),
   onUnload: () =>

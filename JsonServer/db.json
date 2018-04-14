@@ -86,7 +86,7 @@
       "id": 1,
       "name": "iPhone X",
       "price": "20000001",
-      "qty": 3,
+      "qty": "31",
       "visible": true
     },
     {
@@ -116,6 +116,20 @@
       "price": "13",
       "qty": "123123",
       "visible": true
+    },
+    {
+      "id": "d473bf6d-d068-4221-25d1-70a4210e02d1",
+      "name": "qwe",
+      "price": "123",
+      "qty": "123",
+      "visible": false
+    },
+    {
+      "id": "384219cc-976a-93ca-aff3-1ed4ada91af2",
+      "name": "asd",
+      "price": "123",
+      "qty": "321",
+      "visible": false
     }
   ]
 }

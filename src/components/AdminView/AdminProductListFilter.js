@@ -1,11 +1,9 @@
 import React from 'react';
-import Toggle from 'react-toggle';
 import {connect} from 'react-redux';
 import {FILTER_CHANGE,FILTER_PRODUCT} from '../../action/action';
-import agent from '../../agent';
 
 const mapStateToProps = state => ({
-    filter : state.myreducer.filter
+    filter : state.adminViewReducer.filter
 });
 
 
@@ -15,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-class MyFilter extends React.Component {
+class AdminProductListFilter extends React.Component {
   constructor(){
     super();
     this.handleFilterChange = event =>(this.props.handleFilterChange(event));
@@ -25,12 +23,12 @@ class MyFilter extends React.Component {
   
   render(){
     return(
-        <div className="filterDiv">
-            <input type="text" onChange={this.handleFilterChange} value={this.props.filter}/>
-            <input type="button" onClick={this.filterProduct} value ="Filter" />
+        <div className="filterDiv form-inline">
+            <input type="text" className="form-control" onChange={this.handleFilterChange} value={this.props.filter}/>
+            <input type="button" className="form-control" onClick={this.filterProduct} value ="Filter" />
         </div>
     );    
   }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(MyFilter);
+export default connect(mapStateToProps,mapDispatchToProps)(AdminProductListFilter);

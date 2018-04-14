@@ -1,5 +1,4 @@
 import React from 'react';
-import CartProductTable from './CartProductTable';
 import CartTable from './CartTable';
 
 

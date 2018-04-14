@@ -1,14 +1,5 @@
 import {CART_VIEW_SECTION_LOADED,ADD_PRODUCT_TO_CART,QUANTITY_CHANGE,CART_FILTER_CHANGE} from '../action/action';
     
-    function guid() {
-        function s4() {
-          return Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(1);
-        }
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-      }
-
   const initialState = {
     cartProductList: [],
     cartList:{},
@@ -42,7 +33,7 @@ export default (state=initialState,action) =>{
             return {...state,cartList:Object.assign({},action.cart)};
         case CART_FILTER_CHANGE:
             let tempCartProductList = [];
-            if(action.value != undefined || action.value != ""){
+            if(action.value != null && action.value != ""){
                 tempCartProductList = state.originalCartProductList.slice().filter(product => (product.name.toUpperCase().includes(action.value.toUpperCase())));
             }else{
                 tempCartProductList = state.originalCartProductList.slice();

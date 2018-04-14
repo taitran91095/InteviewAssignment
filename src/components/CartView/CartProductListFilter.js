@@ -1,8 +1,6 @@
 import React from 'react';
-import Toggle from 'react-toggle';
 import {connect} from 'react-redux';
 import {CART_FILTER_CHANGE} from '../../action/action';
-import agent from '../../agent';
 
 const mapStateToProps = state => ({
     filter : state.cartViewReducer.filter

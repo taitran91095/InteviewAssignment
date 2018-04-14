@@ -1,9 +1,9 @@
 import React from 'react';
-import MyTable from './MyTable';
-import MyFilter from './MyFilter';
+import AdminProductListTable from './AdminProductListTable';
+import AdminProductListFilter from './AdminProductListFilter';
 
 
-const MyManagerView = props => {
+const AdminProductListView = props => {
     const divStyle = {
         margin: '20px',
         border :'1px solid black',
@@ -12,19 +12,19 @@ const MyManagerView = props => {
     const spanStyle = {
         display:'block',
         position:'absolute',
-        top:'12rem',
+        top:'-1.4rem',
         left:'7rem',
         fontSize:'large',
         fontWeight:'bold',
         background:'white'
     }
     return (
-      <div style={divStyle} >
+      <div style={divStyle} className="col-xs-11" >
         <span style={spanStyle}>Product</span>
-        <MyFilter />
-        <MyTable />
+        <AdminProductListFilter />
+        <AdminProductListTable />
       </div>
     );
 };
 
-export default MyManagerView;
+export default AdminProductListView;

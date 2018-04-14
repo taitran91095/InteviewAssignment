@@ -1,5 +1,4 @@
 import React from 'react';
-import Toggle from 'react-toggle';
 import {connect} from 'react-redux';
 import {ADD_PRODUCT_TO_CART} from '../../action/action';
 import agent from '../../agent';
@@ -10,14 +9,7 @@ const mapStateToProps = state => ({
     //productModel : state.myreducer.productModel
 });
 
-function guid() {
-  function s4() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  }
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-}
+
 
 const mapDispatchToProps = dispatch => ({
   addProductToCart : payload =>dispatch({type:ADD_PRODUCT_TO_CART,payload})
@@ -43,7 +35,7 @@ class CartProductTable extends React.Component {
       }
       let total = 0;
       for(let i =0 , n = this.props.cartList.productList.length; i <n ;i++ ){
-        total += parseFloat(this.props.cartList.productList[i].price) * parseInt(this.props.cartList.productList[i].qty);
+        total += parseFloat(this.props.cartList.productList[i].price) * parseInt(this.props.cartList.productList[i].qty,10);
       }
       this.props.cartList.total = total;
       return this.props.addProductToCart(agent.Cart.update(this.props.cartList));

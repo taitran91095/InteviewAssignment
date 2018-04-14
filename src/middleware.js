@@ -1,4 +1,3 @@
-import agent from './agent';
 import {
   ASYNC_START,
   ASYNC_END,
@@ -16,7 +15,7 @@ const promiseMiddleware = store => next => action => {
     action.payload.then(
       res => {
         const currentState = store.getState()
-        if (!skipTracking && currentState.viewChangeCounter !== currentView) {
+        if (!skipTracking && currentState.viewChangeCounter != currentView) {
           return
         }
         console.log('RESULT', res);
@@ -26,7 +25,7 @@ const promiseMiddleware = store => next => action => {
       },
       error => {
         const currentState = store.getState()
-        if (!skipTracking && currentState.viewChangeCounter !== currentView) {
+        if (!skipTracking && currentState.viewChangeCounter != currentView) {
           return
         }
         console.log('ERROR', error);
@@ -46,7 +45,7 @@ const promiseMiddleware = store => next => action => {
 };
 
 const localStorageMiddleware = store => next => action => {
-  if (action.type === CART_VIEW_SECTION_LOADED) {
+  if (action.type == CART_VIEW_SECTION_LOADED) {
     if (!action.error) {
       window.localStorage.setItem('cartID', action.payload[1].id);
     }
@@ -57,7 +56,7 @@ const localStorageMiddleware = store => next => action => {
 //the return mean if a == true then return b, else return a
 //using this here to check if v is null or not
 function isPromise(v) {
-  return v && typeof v.then === 'function';
+  return v && typeof v.then == 'function';
 }
 
 

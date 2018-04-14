@@ -1,10 +1,7 @@
-import {Link} from 'react-router-dom';
 import React from 'react';
 import agent from '../agent';
 import {connect} from 'react-redux';
 import {CART_VIEW_SECTION_LOADED} from '../action/action';
-import MyTable from './MySection/MyTable';
-import MyManagerView from './MySection/MyManagerView';
 import CartProductListView from './CartView/CartProductListView';
 import CartListView from './CartView/CartListView';
 
@@ -28,15 +25,11 @@ const mapDispatchToProps = dispatch =>({
 });
 
 class CartView extends React.Component{
-    constructor(){
-        super();
-        //set inner text for action
-        }
     componentWillMount(){
         const productPromise = agent.Product.list;
         let cartID = localStorage.getItem("cartID");
         
-        if(cartID != undefined){
+        if(cartID != null){
             const cartPromise = agent.Cart.get;
             this.props.cartViewOnLoad( Promise.all([productPromise(), cartPromise(cartID)]));
         }else{
@@ -52,7 +45,6 @@ class CartView extends React.Component{
         console.log(props);
     }
     render(){
-        var value = this.props.a;
         return(
             <div className="row">
                 <div className="col-xs-7">

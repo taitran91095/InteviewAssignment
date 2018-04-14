@@ -1,13 +1,13 @@
 import React from 'react';
 import Toggle from 'react-toggle';
 import {connect} from 'react-redux';
-import {SORT_LIST_INCREASE,SORT_LIST_DECREASE,MY_CHANGE_VALUE,
+import {SORT_LIST_INCREASE,SORT_LIST_DECREASE,PRODUCT_LIST_CHANGE_VALUE,
   NEW_PRODUCT_VALUE_CHANGE,ADD_NEW_PRODUCT} from '../../action/action';
 import agent from '../../agent';
 
 const mapStateToProps = state => ({
-    productList : state.myreducer.productList,
-    productModel : state.myreducer.productModel
+    productList : state.adminViewReducer.productList,
+    productModel : state.adminViewReducer.productModel
 });
 
 function guid() {
@@ -23,17 +23,17 @@ const mapDispatchToProps = dispatch => ({
     sortDataD: (productList) => dispatch({ type: SORT_LIST_DECREASE, productList }),
     sortData: (productList) => dispatch({ type: SORT_LIST_INCREASE, productList }),
     onChangeHandle: (attr,index,event) =>{
-      if(attr!= "visible"){
-        return dispatch({ type: MY_CHANGE_VALUE, attr:attr,index:index,value:event.target.value});
+      if(attr != "visible"){
+        return dispatch({ type: PRODUCT_LIST_CHANGE_VALUE, attr:attr,index:index,value:event.target.value});
       }else{
         console.log(event.target.checked);
         var value = (event.target.checked == true) ? false : true;
         console.log(value);
-        return dispatch({ type: MY_CHANGE_VALUE, attr:attr,index:index,value:event.target.checked});
+        return dispatch({ type: PRODUCT_LIST_CHANGE_VALUE, attr:attr,index:index,value:event.target.checked});
       }
     } ,
     onProductModelChangeHandle: (attr,event) =>{
-      if(attr!= "visible"){
+      if(attr != "visible"){
         return dispatch({ type: NEW_PRODUCT_VALUE_CHANGE, attr:attr,value:event.target.value});
       }else{
         return dispatch({ type: NEW_PRODUCT_VALUE_CHANGE, attr:attr,value:event.target.checked});
@@ -44,7 +44,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-class MyTable extends React.Component {
+class AdminProductListTable extends React.Component {
   constructor(){
     super();
     this.sortDataD = data => this.props.sortDataD(this.props.productList);
@@ -146,4 +146,4 @@ class MyTable extends React.Component {
   }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(MyTable);
+export default connect(mapStateToProps,mapDispatchToProps)(AdminProductListTable);
