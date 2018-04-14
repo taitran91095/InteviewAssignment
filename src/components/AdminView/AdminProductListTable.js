@@ -95,8 +95,8 @@ class AdminProductListTable extends React.Component {
               <tr>
                   <th>
                       Product Name
-                      <button onClick={this.sortData}>Sort</button>
-                      <button onClick={this.sortDataD}>Sort2</button>
+                      <span onClick={this.sortDataD} className="glyphicon glyphicon-sort-by-alphabet-alt float-right"></span>
+                      <span onClick={this.sortData} className="glyphicon glyphicon-sort-by-alphabet float-right"></span>
                   </th>
                   <th>
                       Price
@@ -114,7 +114,7 @@ class AdminProductListTable extends React.Component {
                         {product.name}
                     </td>
                     <td>
-                        <input onBlur={this.updateProduct.bind(this,i)} className="form-control" onChange={this.onChangeHandle.bind(this,'price',i)} value={product.price}  />
+                        <input onBlur={this.updateProduct.bind(this,i)} step="0.01" type="number" className="form-control" onChange={this.onChangeHandle.bind(this,'price',i)} value={product.price}  />
                     </td>
                     <td>
                         <input onBlur={this.updateProduct.bind(this,i)} type="number" className="form-control" onChange={this.onChangeHandle.bind(this,'qty',i)} value={product.qty}  />
@@ -129,13 +129,13 @@ class AdminProductListTable extends React.Component {
                     <input className="form-control" onChange={this.onProductModelChangeHandle.bind(this,'name')} value={this.props.productModel.name}  />
                   </td>
                   <td>
-                    <input className="form-control" onChange={this.onProductModelChangeHandle.bind(this,'price')} value={this.props.productModel.price}  />
+                    <input className="form-control" step="0.01" type="number" onChange={this.onProductModelChangeHandle.bind(this,'price')} value={this.props.productModel.price}  />
                   </td>
                   <td>
-                    <input className="form-control" type="number" onChange={this.onProductModelChangeHandle.bind(this,'qty')} value={this.props.productModel.qty}  />
+                    <input className="form-control"  type="number" onChange={this.onProductModelChangeHandle.bind(this,'qty')} value={this.props.productModel.qty}  />
                   </td>
-                  <td>
-                    <input type="button" onClick={this.addProduct} value="Add" />
+                  <td className="form-inline">
+                    <button onClick={this.addProduct} className="form-control" ><span className="glyphicon glyphicon-triangle-left "></span>Add</button>
                   </td>
               </tr>
             </tbody>

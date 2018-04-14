@@ -2,7 +2,7 @@
   "cart": [
     {
       "id": 1,
-      "total": 35667117790.598,
+      "total": 35667117667.598,
       "productList": [
         {
           "id": 1,
@@ -14,28 +14,28 @@
           "id": 2,
           "name": "iPhone X2",
           "price": 20000002,
-          "qty": 412,
+          "qty": "412",
           "visible": true
         },
         {
           "id": 3,
           "name": "iPhone 3",
           "price": 2000000.999,
-          "qty": 402,
+          "qty": "402",
           "visible": true
         },
         {
           "id": "7130c88b-e429-b5e9-b54b-57cb7f6c1aa4",
           "name": "asdasd",
           "price": "13",
-          "qty": 123124,
+          "qty": "123124",
           "visible": true
         },
         {
           "id": "d8931732-128f-9dce-5ff8-dd7de70406e5",
           "name": "asd",
           "price": "123",
-          "qty": 12314,
+          "qty": "12313",
           "visible": true
         }
       ]
@@ -99,7 +99,7 @@
     {
       "id": 3,
       "name": "iPhone 3",
-      "price": 2000000.999,
+      "price": "2000001.05",
       "qty": 33,
       "visible": true
     },

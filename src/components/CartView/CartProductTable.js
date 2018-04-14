@@ -89,8 +89,8 @@ class CartProductTable extends React.Component {
                     <td>
                         {product.price}
                     </td>
-                    <td>
-                        <input onClick={this.addProductToCart.bind(this,i)} type="button" value="Add" />
+                    <td className="form-inline">
+                        <button className="form-control" onClick={this.addProductToCart.bind(this,i)}><span className="glyphicon glyphicon-shopping-cart"></span>Add</button>
                     </td>
                 </tr>
               )}

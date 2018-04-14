@@ -81,7 +81,7 @@ class CartTable extends React.Component {
                         {product.price}
                     </td>
                     <td>
-                      <input type="number" value={product.qty} onChange={this.handleCartQuantityChange.bind(this,i)} onBlur={this.addProductToCart.bind(this,i)} />
+                      <input className="form-control" type="number" value={product.qty} onChange={this.handleCartQuantityChange.bind(this,i)} onBlur={this.addProductToCart.bind(this,i)} />
                     </td>
                 </tr>
               )}
