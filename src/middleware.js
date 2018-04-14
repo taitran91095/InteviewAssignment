@@ -1,7 +1,8 @@
 import agent from './agent';
 import {
   ASYNC_START,
-  ASYNC_END
+  ASYNC_END,
+  CART_VIEW_SECTION_LOADED
 } from './action/action';
 
 //define promise middleware
@@ -44,6 +45,14 @@ const promiseMiddleware = store => next => action => {
   next(action);
 };
 
+const localStorageMiddleware = store => next => action => {
+  if (action.type === CART_VIEW_SECTION_LOADED) {
+    if (!action.error) {
+      window.localStorage.setItem('cartID', action.payload[1].id);
+    }
+  } 
+  next(action);
+};
 
 //the return mean if a == true then return b, else return a
 //using this here to check if v is null or not
@@ -52,5 +61,5 @@ function isPromise(v) {
 }
 
 
-export { promiseMiddleware }
+export { promiseMiddleware,localStorageMiddleware }
  

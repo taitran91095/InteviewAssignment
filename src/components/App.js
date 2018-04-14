@@ -7,7 +7,9 @@ import Home from '../components/Home';
 import { store } from '../store';
 import { push } from 'react-router-redux';
 import MySection from '../components/MySection';
+import CartView from '../components/CartView';
 import { APP_LOAD, REDIRECT } from '../action/action';
+
 
 const mapStateToProps = state => {
   return {
@@ -42,6 +44,7 @@ class App extends React.Component {
             <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/mysection" component={MySection} />
+            <Route path="/cartView" component={CartView} />
             </Switch>
         </div>
       );

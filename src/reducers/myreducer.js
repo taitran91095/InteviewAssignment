@@ -75,7 +75,7 @@ export default (state=initialState,action) =>{
             if(state.filter != undefined && state.filter != "")
             {
                 console.log(state.filter)
-                var tempArr = state.productListOriginal.slice().filter(product => (product.name.includes(state.filter)));
+                var tempArr = state.productListOriginal.slice().filter(product => (product.name.toUpperCase().includes(state.filter.toUpperCase())));
                 console.log(tempArr);
                 return{...state,productList: tempArr};
             }else{

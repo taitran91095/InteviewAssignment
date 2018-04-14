@@ -24,6 +24,14 @@ const Product = {
     update:(product) => request.put('/product/'+product.id,product)
 }
 
+const Cart = {
+  list:() => request.get('/cart'),
+  get:(id) => request.get('/cart/'+id),
+  add:(cart) => request.post('/cart',cart),
+  update:(cart) => request.put('/cart/'+cart.id,cart)
+}
+
 export default {
+    Cart,
     Product
 };

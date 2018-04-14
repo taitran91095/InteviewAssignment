@@ -11,7 +11,7 @@ class Header extends React.Component {
           </Link>
           <ul className="nav navbar-nav">
             <li className="nav-item">
-            <Link to="/mysection" className="nav-link">
+            <Link to="/cartView" className="nav-link">
                 Shop and Cart
             </Link>
             </li>
