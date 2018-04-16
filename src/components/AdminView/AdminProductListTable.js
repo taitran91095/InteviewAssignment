@@ -2,7 +2,7 @@ import React from 'react';
 import Toggle from 'react-toggle';
 import {connect} from 'react-redux';
 import {SORT_LIST_INCREASE,SORT_LIST_DECREASE,PRODUCT_LIST_CHANGE_VALUE,
-  NEW_PRODUCT_VALUE_CHANGE,ADD_NEW_PRODUCT} from '../../action/action';
+  NEW_PRODUCT_VALUE_CHANGE,ADD_NEW_PRODUCT,UPDATE_PRODUCT} from '../../action/action';
 import agent from '../../agent';
 
 const mapStateToProps = state => ({
@@ -40,7 +40,7 @@ const mapDispatchToProps = dispatch => ({
       }
     } ,
     addProduct: (payload) => dispatch({ type: ADD_NEW_PRODUCT ,payload}),
-    updateProduct: (payload,index) => dispatch({ type: ADD_NEW_PRODUCT ,payload,index:index})
+    updateProduct: (payload,index) => dispatch({ type: UPDATE_PRODUCT ,payload, index:index})
 });
 
 

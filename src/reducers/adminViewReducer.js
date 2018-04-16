@@ -53,7 +53,7 @@ export default (state=initialState,action) =>{
             state.productList.push(action.payload);
             return{...state,productModel: state.productList.slice(),productListOriginal: state.productList.slice(),productModel: {"id":"","name":"","price":"","qty":"","visible":false}};
         case UPDATE_PRODUCT:
-            state.productList[action.index](action.payload);
+            state.productList[action.index] =action.payload;
             return{...state,productModel: state.productList.slice(),productListOriginal: state.productList.slice()};
         case FILTER_PRODUCT:
             if(state.filter != null && state.filter != "")
